@@ -57,8 +57,17 @@ sheltr.locations = (function ($) {
 
     selectMarkerIcon: function(location) {
       var icon
-
-      if (location.isShelter && location.isFood) {
+      
+      if (location.isShelter && location.isFood && location.isIntake) {
+          icon = '/img/shelter_food_intake.png';
+      }
+      else if (location.isShelter && location.isIntake) {
+          icon = '/img/shelter_intake.png';
+      }
+      else if (location.isFood && location.isIntake) {
+          icon = '/img/food_intake.png';
+      } 
+      else if (location.isShelter && location.isFood) {
         icon = '/img/shelter_food.png';
       } else if (location.isIntake) {
         icon = '/img/intake.png';
